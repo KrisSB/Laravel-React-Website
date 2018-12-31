@@ -14,4 +14,4 @@ Was made with:
 
 - Laravel PHP as the back-end
 - React as the front-end
-- Node.js was used to handle most the JS
+- Node.js
