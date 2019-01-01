@@ -6,6 +6,7 @@ The main features of the project were focused around filtering Articles using bo
 
 Some important skills used on the website:
 
+- jSON
 - REST APIs
 - Fetch / Promises 
 - Single Page Application development
