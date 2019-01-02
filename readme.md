@@ -14,5 +14,6 @@ Some important skills used on the website:
 Was made with:
 
 - Laravel PHP as the back-end
+  - Laravel Passport for username authentication between backend and frontend
 - React as the front-end
 - Node.js
