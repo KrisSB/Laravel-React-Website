@@ -33,9 +33,6 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li><a href="/VideoGames">Video Games</a></li>&nbsp; 
-                        <li><a href="/Reviews">Reviews</a></li> &nbsp;
-                        <li><a href="/Guides">Guides</a></li> &nbsp;
-                        <li><a href="/Forum">Forum</a></li> &nbsp;
                         <li><a href="/News">News Articles</a></li> &nbsp;
                     </ul>
 
