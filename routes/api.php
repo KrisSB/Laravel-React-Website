@@ -25,7 +25,7 @@ Route::get('consoles','ConsolesController@index');
 Route::get('genres','GenresController@index');
 
 Route::get('games', 'GamesController@index');
-Route::post('storeGames', 'GamesController@store');
+Route::post('storeGames', 'GamesController@store')->middleware('auth:api');
 Route::get('paginateGames/{letter}', 'GamesController@paginate');
 Route::get('searchGames/{search}', 'GamesController@search');
 Route::get('showGame/{game}','GamesController@show');
@@ -33,8 +33,8 @@ Route::get('showGame/{game}','GamesController@show');
 Route::get('news', 'NewsController@index');
 Route::get('paginateNews/{letter}', 'NewsController@paginate');
 Route::get('searchNews/{search}', 'NewsController@search');
-Route::post('storeNews', 'NewsController@store');
+Route::post('storeNews', 'NewsController@store')->middleware('auth:api');
 Route::get('showNews/{article}','NewsController@show');
 
 Route::get('showWikis/{game}','WikisController@show');
-Route::post('storeWikis', 'WikisController@store');
+Route::post('storeWikis', 'WikisController@store')->middleware('auth:api');

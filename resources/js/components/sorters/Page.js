@@ -26,6 +26,15 @@ export default class Page extends Component {
             this.setState({totalPages: this.getTotalPages()});
         })
     }
+    filter_data(data,page) {
+        let games = [];
+        data.forEach(result => {
+            if(result.firstletter.toLowerCase() === page.toLowerCase()) {
+                games.push(result);
+            }
+        });
+        return games;
+    }
     getTotalPages() {
         let totalPages = Math.ceil(this.state.games.length / this.state.resultsPerPage);
         return totalPages;

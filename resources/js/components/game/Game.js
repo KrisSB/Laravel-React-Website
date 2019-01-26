@@ -8,7 +8,6 @@ export default class Game extends Component {
         super();
         this.state = {
             gamedata: [],
-            user: [],
             wiki: [],
             showPopup: false,
         }
@@ -38,11 +37,6 @@ export default class Game extends Component {
                 }
             })
             .catch(err => console.error(err));
-        //Gets user Data, we use Laravel Passport in the background to pass a Laravel_Token
-        axios.get('/api/user')
-        .then(response => {
-            this.setState({ user : response.data });
-        })
     }
     togglePopup() {
         this.setState({
@@ -50,15 +44,17 @@ export default class Game extends Component {
         });
     }
     handleAddTip(data) {
+        let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
         data.push(this.state.gamedata.id);
-        data.push(this.state.user.id);
         fetch('../api/storeWikis', {
             method: 'post',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
+                "X-Requested-With": "XMLHttpRequest",
+                "X-CSRF-TOKEN": token         
+            },
+            body: JSON.stringify(data)
         }).then(response => {
             return response.json();
         }).then(wiki => {

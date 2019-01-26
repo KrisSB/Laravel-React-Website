@@ -30,6 +30,7 @@ export default class Searchbar extends Component {
         if(search.length <= 2) {
             let clear_array = [];
             this.setState({filtered_data : clear_array});
+            this.setState({ showResults: false});
         }
         if((search.length >= 3) && (this.state.data.length >= 1)) {
             this.setState({ filtered_data: filter_check});
@@ -61,15 +62,24 @@ export default class Searchbar extends Component {
             
         }
         return false;
-    }   
+    }
+    toggle(bool) {
+        setTimeout(
+            function() {
+                this.setState({showResults: bool})
+            }
+            .bind(this),
+            250
+        );
+    }
     render() {
         return (
             <div id='searchbar'>
                 <form>
-                    <input type='text' placeholder='Search. .' ref='search' className='searchbar' onChange={this.search} />
+                    <input type='text' placeholder='Search. .' ref='search' className='searchbar' onChange={this.search} onBlur={() => this.toggle(false)} onFocus={this.search} />
                 </form>{this.state.showResults ? 
                     <div className='search_results'>
-                        <SBPopup 
+                         <SBPopup 
                             results={this.state.filtered_data}
                             link_location={this.props.link_location}
                         />

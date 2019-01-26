@@ -75,6 +75,9 @@ export default class Pagination extends Component {
                     }
                 }
             }
+            if(this.state.totalPages > (currentPage + this.state.cushion)) {
+                array.push(<button onClick={() => this.paginate(this.state.totalPages)}>{this.state.totalPages}</button>);
+            }
             array.push(<button onClick={() => this.paginate('Next')}>Next</button>);
         }
         this.setState({nav:array});

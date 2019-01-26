@@ -19,6 +19,3 @@ require('./components/News/Main');
 require('./components/game/Game');
 require('./components/navigation/Main');
 require('./components/article/Article');
-
-/*require('./index.js');
-require('./navbar.js');*/

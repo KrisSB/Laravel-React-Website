@@ -9,19 +9,12 @@ export default class VGPopup extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {
             games: [],
-            user: [],
             consoles: [],
             checkedConsoles: new Map(),
             checkedGenres: new Map()
         }
         this.consoleCheckBox = this.consoleCheckBox.bind(this);
         this.genreCheckBox = this.genreCheckBox.bind(this);
-    }
-    componentDidMount() {
-        axios.get('/api/user')
-            .then(response => {
-                this.setState({ user : response.data });
-            });
     }
     handleSubmit(e) {
         e.preventDefault();
@@ -30,10 +23,9 @@ export default class VGPopup extends Component {
 
         let title = this.refs.title.value;
         let description = this.refs.description.value;
-        let user_id = this.state.user.id;
 
         title = title.charAt(0).toUpperCase() + title.slice(1);
-        let data = [title,description,user_id,consoles,genres];
+        let data = [title,description,consoles,genres];
         if(title !== '') {
             this.props.addGame(data);
             this.props.closePopup();
@@ -78,7 +70,7 @@ export default class VGPopup extends Component {
                                 checkBox = {this.genreCheckBox.bind(this)}
                             />
                         </li>
-                        <li><input type="submit" value="Submit" className='btn btn-primary' /></li>
+                        <li><input type="submit" value="Submit" className='btn' /></li>
                     </ul>
                 </form>
             </div>

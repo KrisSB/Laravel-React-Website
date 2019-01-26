@@ -22,7 +22,7 @@ export default class SBPopup extends Component {
     render() {
     let filtered_results = this.results();
     let results = filtered_results.map(filtered_game => {
-        return <div key={filtered_game.id} className='search_result'><a href={filtered_game.link_location + filtered_game.url}>{filtered_game.title}</a></div>
+        return <a href={filtered_game.link_location + filtered_game.url}  key={filtered_game.id} ><div className='search_result'>{filtered_game.title}</div></a>
     });
       return (
         <div className='sb_popup'>

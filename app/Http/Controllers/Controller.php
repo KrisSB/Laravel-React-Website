@@ -21,4 +21,13 @@ class Controller extends BaseController
         } 
         return '';
     }
+    public function getUser() {
+        $user_id = 0;
+        if(isset(auth()->user()->id)) {
+            $user_id = auth()->user()->id;
+        } else {
+            $user_id = 0;
+        }
+        return $user_id;
+    }
 }

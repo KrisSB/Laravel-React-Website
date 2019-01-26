@@ -23,7 +23,7 @@ export default class Default extends Component  {
     render() {
         return (
             <div>
-                <button id='add-game' onClick={this.togglePopup.bind(this)} className='btn btn-primary'>Add Game</button>
+                <button id='add-game' onClick={this.togglePopup.bind(this)} className='btn'>Add Game</button>
                 <Searchbar 
                     api={['../api/games/']}
                     link_location={['/VideoGames/']}

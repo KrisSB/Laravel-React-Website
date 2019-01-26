@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Game;
 
 class GamesController extends Controller
@@ -21,12 +22,6 @@ class GamesController extends Controller
         } else {
             $firstletter = $title[0];
         }
-        $user_id = 0;
-        if($data[2] !== null) {
-            $user_id = $data[2];
-        } else {
-            $user_id = 0;
-        }
 
         //Stores game data
         $game = new Game;
@@ -34,14 +29,14 @@ class GamesController extends Controller
         $game->url = str_replace(' ', '_', $title);
         $game->title = $title;
         $game->description = $description;
-        $game->user_id = $user_id;
+        $game->user_id = $this->getUser();
         $game->IP_address = $this->getClientIP();
         $game->save();
 
-        $consoles = $data[3];  //Gets which consoles the game is available for
+        $consoles = $data[2];  //Gets which consoles the game is available for
         $this->storeConsoles($game,$consoles);
 
-        $genres = $data[4];
+        $genres = $data[3];
         $this->storeGenres($game,$genres);
         return Game::all(); 
     }

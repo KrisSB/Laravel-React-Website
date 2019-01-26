@@ -23,6 +23,6 @@ export default class Main extends Component {
     }
 };
 
-if (document.getElementById('navSearchbar')) {
-    ReactDOM.render(<Main />, document.getElementById('navSearchbar'));
+if (document.getElementById('navSearchBar')) {
+    ReactDOM.render(<Main />, document.getElementById('navSearchBar'));
 }

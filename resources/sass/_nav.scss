@@ -1,0 +1,24 @@
+nav {
+    background-color: rgb(37, 35, 172);
+}
+.navBar {
+    display: flex;
+    flex-direction: row;
+    font-size: 26px;
+    width: 80%;
+    margin: auto auto;
+}
+.navItem6 {
+    margin-left: auto;
+}
+.navBar li {
+    list-style: none;
+    padding: 20px;
+}
+.navBar a {
+    color: #FFF;
+    text-decoration: none;
+}
+.navBar a:hover {
+    text-decoration: underline;
+}

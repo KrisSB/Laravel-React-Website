@@ -1,0 +1,36 @@
+.sort_alphabet {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 26px;
+    a {
+        color: #000;
+        text-decoration: none;
+        font-size: 26px;
+    }
+    a:hover {
+        color: #333;
+        text-decoration: underline;
+    }
+}
+.page_results {
+    background-color: #CCC;
+    font-size: 26px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    .page_result {
+        border-bottom: 1px solid #000;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    a {
+        text-decoration: none;
+        color: #0000FF;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
